@@ -1,0 +1,22 @@
+#header {
+	position: relative;
+	height:20px;
+	width: 200px;
+	background-color: lightgray;
+	margin-top: 20px;
+	border: 1px solid lightgray;
+}
+#body{
+	position: relative;
+	height:200px;
+	width: 200px;
+	border: 1px solid lightgray;
+	background-color: green;
+}
+#left{
+	position: relative;
+	height:200px;
+	width: 200px;
+	border: 1px solid lightgray;
+	background-color: green;
+}

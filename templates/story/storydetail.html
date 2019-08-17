@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_links %}
+{% endblock %}
+{% block style_links %}
+<link rel="stylesheet" href="{% static 'css/storydetails.css' %}">
+{% endblock %}
+
+{% block title %}
+{{instance.title}}
+{% endblock %}
+{% block content %}
+
+<div class="wraper">
+
+<div class="box">
+    <div class="content">
+            <p class="">{{instance.vegetable|safe}}</p>
+            <p class="">{{instance.phonenumber|safe}}</p>
+            <p class="">{{instance.price|safe}}</p>
+            <p class="">{{instance.quantity|safe}}</p>
+            <p class="">{{instance.chatroom|safe}}</p>
+            <p class="">{{instance.date|date:"M"}},{{instance.date.day}},
+                {{instance.date.year}}||{{instance.address.name}}</p>
+    </div>
+    <div class="details">
+        <div class="image">
+            <img src="{{instance.userimage.url}}" class="img-fluid" alt="{{instance.name}}">
+                <h3>
+                    {instance.name}}<br>
+                    {{instance.address|safe}}
+                    <span></span></h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>{{instance.name}}</h3>
+            <img src="{{instance.userimage.url}}" class="img-fluid" alt="{{instance.name}}">
+            <p class="">{{instance.name|safe}}</p>
+            <p class="">{{instance.address|safe}}</p>
+            <p class="">{{instance.phonenumber|safe}}</p>
+            <p class="">{{instance.price|safe}}</p>
+            <p class="">{{instance.quantity|safe}}</p>
+            <p class="">{{instance.chatroom|safe}}</p>
+            <p class="">{{instance.date|date:"M"}},{{instance.date.day}},
+                {{instance.date.year}}||{{instance.address.name}}</p>
+
+        </div>
+    </div>
+</div> -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="container">
+    <img src="{{selle.userimage.url}}" class="user">
+    {% for selle in seller_list %}
+    <div class="card">
+        <div class="imgBox">
+            <img src="{{selle.image.url}}" class="img-fluid" alt="{{selle.title}}">
+        </div>
+        <div class="details">
+            <p class="">{{selle.name}}</p>
+            <p class="">{{selle.address}}</p>
+           
+            <p class="">{{selle.price}}</p>
+            <p class="">{{selle.quantity}}</p>
+
+            <div id="register-link" class="text-right">
+                <button><a href="{% url 'home:loginchat' %}" class="text-info">View more </a></button>
+                <a href="{% url 'home:loginchat' %}" class="text-info">Chat</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div>
+        <div class="row">
+            <div class="col">
+                <h4>
+                    Adresss
+                </h4>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {% for adress in address_list %}
+                    <p class="address-name">
+                        <a href="{{address.get_absolute_url}}">{{address.name}}</a>
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+{% block script_links %}
+
+{% endblock %}
+{% block script %}
+
+{% endblock %}

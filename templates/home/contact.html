@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_links %}
+{% endblock %}
+{% block style_links %}
+{% endblock %}
+
+{% block title %}
+COntact
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+            <form method="POST" action="" accept-charset="utf-8" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" class="form-control" name="full_name" id="full_name" aria-describedby="emailHelp"
+                        placeholder="Enter Full name">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="number" class="form-control" name="phone_number" id="phone_number"
+                        placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" name="address" id="address" placeholder="Enter address">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" name="message" id="message" placeholder="Enter text"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-primary my-3" role="alert">
+
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col">
+            h1>My First Google Map</h1>
+
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+
+            <script>
+                function myMap() {
+                    var mapProp = {
+                        center: new google.maps.LatLng(51.508742, -0.120850),
+                        zoom: 5,
+                    };
+                    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                }
+            </script>
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+{% block script_links %}
+
+{% endblock %}
+{% block script %}
+
+{% endblock %}

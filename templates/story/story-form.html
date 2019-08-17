@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_links %}
+{% endblock %}
+{% block style_links %}
+<link rel="stylesheet" href="{% static 'css/sellform.css' %}">
+{% endblock %}
+
+
+{% block title %}
+Sell Goods
+{% endblock %}
+
+{% block content%}
+<div class="finalwraper">
+<div class="loginBox">
+
+    <img src="{% static 'img/logo.jpg' %}" class="user">
+
+    <h2>Register Here</h2>
+
+    <form class="" method="POST" action="" accept-charset="utf-8" enctype="multipart/form-data">
+                {% csrf_token %}
+
+        <p>User Name:</p>
+
+    <input type="text" value="{% if form.name.value %}{{form.name.value}}{% endif %}" name="name" class="form-control"
+        id="exampleInputPassword1" placeholder="Enter full name">
+        <p>User Image:</p>
+        <input type="file" value="{% if form.userimage.value %}{{form.userimage.value}}{% endif %}" style="height: 100%; margin-left: 0px;" class="form-control" name="image"
+            id="id_image">
+        <img id="image_holder" src="{% if instance %}{{instance.userimage.url}} {%  endif %}" style="height: 100%; margin-left: 0px;"
+            alt="{{instance.vegetable}}">
+        <p>Vegetable Name:</p>
+        <input type="text" value="{% if form.vegetable.value %}{{form.vegetable.value}}{% endif %}" name="vegetable"
+                        class="form-control" id="exampleInputPassword1" placeholder="Enter the vegetable name">
+        <p>Address:</p>
+        <input type="text" value="{% if form.address.value %}{{form.address.value}}{% endif %}" name="address"
+            class="form-control" id="exampleInputPassword1" placeholder="Enter address">
+
+        <p>Phone Number:</p>
+        <input type="text" value="{% if form.phonenumber.value %}{{form.phonenumber.value}}{% endif %}" name="phonenumber"
+            class="form-control" id="exampleInputPassword1" placeholder="Enter the phonenumber">
+
+        <p>Image of vegetable:</p>
+        <input type="file" value="{% if form.image.value %}{{form.image.value}}{% endif %}" style="height: 100%; margin-left: 0px;"class="form-control" name="image"
+            id="id_image">
+        <img id="image_holder" src="{% if instance %}{{instance.image.url}} {%  endif %}" style="height: 50px;"
+            alt="{{instance.vegetable}}">
+        <p>Date:</p>
+        <input type="date" value="{% if form.date.value %}{{form.date.value}}{% endif %}" class="form-control" name="date"
+                      id="id_date">
+
+
+        <p>Price :</p>
+        <input type="text" value="{% if form.price.value %}{{form.price.value}}{% endif %}" name="price" class="form-control"
+            id="exampleInputPassword1" placeholder="Enter Price per kg">
+
+
+        <p>Quantity:</p>
+        <input type="text" value="{% if form.quantity.value %}{{form.quantity.value}}{% endif %}" name="quantity"
+            class="form-control" id="exampleInputPassword1" placeholder="Enter quantity">
+
+        <p>Chatroom:</p>
+        <input type="text" value="{% if form.chatroom.value %}{{form.chatroom.value}}{% endif %}" name="chatroom"
+            class="form-control" id="exampleInputPassword1" placeholder="Enter Chatroom">
+
+        <input type="submit" name="" value="Submit">
+
+
+
+
+    {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-primary" role="alert">
+                    {{message}}
+                </div>
+                {% endfor %}
+                {% endif %}
+
+    </form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="container-">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset">
+            <form class="" method="POST" action="" accept-charset="utf-8" enctype="multipart/form-data">
+                {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" value="{% if form.name.value %}{{form.name.value}}{% endif %}" name="name" class="form-control"
+                id="exampleInputPassword1" placeholder="Enter full name">
+        </div>
+        <div class="form-group">
+            <label for="phonenumber">Vegetable name</label>
+            <input type="text" value="{% if form.vegetable.value %}{{form.vegetable.value}}{% endif %}" name="vegetable"
+                class="form-control" id="exampleInputPassword1" placeholder="Enter the vegetable name">
+        </div>
+        
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" value="{% if form.address.value %}{{form.address.value}}{% endif %}" name="address"
+                class="form-control" id="exampleInputPassword1" placeholder="Enter address">
+        </div>
+        
+        <div class="form-group">
+            <label for="phonenumber">Phone Number</label>
+            <input type="text" value="{% if form.phonenumber.value %}{{form.phonenumber.value}}{% endif %}" name="phonenumber"
+                class="form-control" id="exampleInputPassword1" placeholder="Enter the phonenumber">
+        </div>
+        
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" value="{% if form.image.value %}{{form.image.value}}{% endif %}" class="form-control"
+                name="image" id="id_image">
+        </div>
+        <div class="my-2 image-holder">
+            <img id="image_holder" src="{% if instance %}{{instance.image.url}} {%  endif %}" style="height: 50px;"
+                alt="{{instance.vegetable}}">
+        </div>
+        
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" value="{% if form.date.value %}{{form.date.value}}{% endif %}" class="form-control" name="date"
+                id="id_date">
+        </div>
+        
+        <div class="form-group">
+            <label for="price">Price </label>
+            <input type="text" value="{% if form.price.value %}{{form.price.value}}{% endif %}" name="price"
+                class="form-control" id="exampleInputPassword1" placeholder="Enter Price per kg">
+        </div>
+        
+        <div class="form-group">
+            <label for="quantity">Quantity In KG:</label>
+            <input type="text" value="{% if form.quantity.value %}{{form.quantity.value}}{% endif %}" name="quantity"
+                class="form-control" id="exampleInputPassword1" placeholder="Enter quantity">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+    </div> -->
+
+
+    <!-- {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-primary" role="alert">
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %} -->
+
+</div>
+
+{% endblock%}
+
+{% block  script_link %}
+{% endblock %}
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#id_image').on('change', function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#image_holder').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        })
+    });
+</script>
+{% endblock %}

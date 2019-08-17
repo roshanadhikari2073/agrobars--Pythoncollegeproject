@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_links %}
+{% endblock %}
+{% block style_links %}
+{% endblock %}
+
+{% block title %}
+My story 12344
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>my Storyadasd</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-10">
+            {% for story in story_list %}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card story-card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{seller.image.url}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">{{seller.content|striptags|truncatewords:10}}</p>
+                            <a href="{{seller.get_absolute_url}}" class="btn btn-primary">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <div class="row">
+                <div class="col">
+                    <h4>address</h4>
+                    {% for address in address_list %}
+                    <p class="tag-name"><a href="{{address.get_absolute_url}}">{{address.name}}</a></p>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script_links %}
+
+{% endblock %}
+{% block script %}
+
+{% endblock %}

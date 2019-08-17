@@ -1,0 +1,111 @@
+nav
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    transition: .5s;
+    background-color: #3c6f73;
+    z-index: 2;
+    
+}
+nav.black
+{
+    background: black;
+    /*height: 80px;*/
+    padding: 10px 50px;
+}
+nav .logo
+{
+    float: left;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+nav .logo img
+{
+    height: 80px;
+    width: 105px;
+    transition: .5s;
+}
+nav.black .logo img
+{
+    height: 60px;
+}
+nav ul
+{
+    float: left;
+    margin-left: 80px;
+    margin-right: 7em;
+    padding: 10px;
+    display: flex;
+}
+nav ul li
+{
+    list-style: none;
+}
+nav ul li a
+{
+    /*line-height: 80px;*/
+    color: white;
+    padding: 5px 20px;
+    display: block;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 25px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+nav.black ul li a
+{
+    color: #fff;
+    line-height: 60px;
+}
+nav ul li a.active,
+nav ul li a:hover
+{
+    color: white;
+    /*background: gold;*/
+}
+/*Focuse*/
+
+ul:hover li a
+{
+    transform: scale(1.5);
+    opacity: .2;
+    filter: blur(10px);
+}
+
+ul li a:hover
+{
+    transform: scale(2);
+    opacity: 1;
+    filter: blur(0);
+}
+
+
+ul li a:before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgb(56, 89, 199); */
+    transition: transform 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+ul li a:hover:before
+{
+    transition: transform 0.5s;
+    transform-origin: left;
+    transform: scaleX(1);
+}

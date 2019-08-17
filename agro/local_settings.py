@@ -1,0 +1,6 @@
+DEBUG_STATE = True
+DB_NAME = 'agro123'
+DB_USER = 'agro123'
+DB_PASSWORD = 'bars'
+DB_HOST = '127.0.0.1'
+DB_PORT = '5432'

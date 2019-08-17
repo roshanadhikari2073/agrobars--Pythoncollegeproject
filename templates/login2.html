@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta_links %}
+{% endblock %}
+{% block style_links %}
+<link rel="stylesheet" href="{% static 'css/finallogin.css' %}">
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<div class="finalwraper">
+
+    <div class="loginBox">
+    
+        <img src="{% static 'img/logo.jpg' %}" class="user">
+    
+        <h2>Log In Here</h2>
+    
+        <div class="form-group col-md-5">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li class="alert">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    
+        <form method="post" action="">
+            {% csrf_token %}
+    
+            <p>Username</p>
+    
+            <input type="text" name="user" placeholder="Enter user">
+    
+            <p>Password</p>
+    
+            <input type="password" name="pas" placeholder="••••••">
+    
+            <input type="submit" name="" value="Sign In">
+    
+            <a href="{% url 'home:register' %}">Register new Account</a>
+    
+        </form>
+    
+    </div>
+
+
+
+
+    <!-- <div class="container">
+        <div style="background-color: #122b40; color: white; font-size:22px" class="col-md-7">
+                <b>USER LOGIN PAGE</b>
+        </div>
+
+            <div class="form-group col-md-6">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li class="alert alert-danger">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div class="col-md-7">
+                <form method="post" action="" class="form-horizontal">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Username</label>
+                        <div class="col-md-5">
+                            <input type="text" name='user' class="form-control" placeholder='Enter user name'>
+                        </div>
+                    </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Password</label>
+                    <div class="col-md-5">
+                        <input type="password" name='pas' class="form-control" placeholder='Enter password'>
+                    </div>
+                </div>
+
+                <div class="col-md-offset-3">
+                    <button type='submit' class="btn btn-primary">Login</button>
+                    <button type='submit' class="btn btn-primary">
+                        <a href="{% url 'home:register' %}" class="text-info">Register</a>
+                    </button>
+                </div>
+                    
+                </form>
+            </div>
+
+    </div> -->
+
+</div>
+
+{% endblock %}
+
+{% block script_links %}
+
+{% endblock %}
+{% block script %}
+
+{% endblock %}
