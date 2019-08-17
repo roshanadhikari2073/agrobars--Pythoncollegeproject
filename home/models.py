@@ -15,7 +15,8 @@ class Address(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("home:addressSeller", kwargs={"name": self.name})
+        # return reverse("home:addressSeller", kwargs={"name": self.name})
+        return '/address/%s/' % self.name
 
 ["__str__","userimage", "vegetable", "address", "phonenumber","image","date","price", "quantity","chatroom"]
 
